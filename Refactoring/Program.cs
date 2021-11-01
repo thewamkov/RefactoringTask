@@ -32,8 +32,14 @@ namespace Refactoring
 
             foreach (var orderProduct in order.Item2)
             {
-                decimal productPrice, amount;
-                NewMethod(ref price, ref orderSummary, orderProduct, out productPrice, out amount);
+                
+                orderSummary += orderProduct.ProductName;
+                var amount = getProductAmount(orderProduct);
+
+
+                var productPrice = (amount * orderProduct.Price);
+                price += productPrice;
+
 
                 if (orderProduct.PricingMethod == "PerPound")
                     orderSummary += (" $" + productPrice + " (" + amount + " pounds at $" + orderProduct.Price + " per pound)");
@@ -50,21 +56,12 @@ namespace Refactoring
             Console.WriteLine("Total Price: $" + price);
 
             Console.ReadKey();
-
-            static void NewMethod(ref decimal price, ref string orderSummary, Product orderProduct, out decimal productPrice, out decimal amount)
-            {
-                productPrice = 0m;
-                orderSummary += orderProduct.ProductName;
-                amount = getProductAmount(orderProduct);
-                productPrice = (amount * orderProduct.Price);
-                price += productPrice;
-            }
         }
 
         public static decimal getProductAmount(Product product)
         {
             
-            return product.Weight != null ? product.Weight.Value : product.Quantity.Value;
+            return product.Weight != null ? product.Weight.Value : product.Quantity.Value; 
 
         }
 
