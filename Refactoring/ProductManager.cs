@@ -15,7 +15,7 @@ namespace Refactoring
 
         public ProductManager()
         {
-            OrderSummary = String.Empty;
+            OrderSummary = string.Empty;
             totalPrice = 0m;
         }
 
@@ -41,6 +41,8 @@ namespace Refactoring
                         OrderSummary += (" $" + productPrice + " (" + amount + " pounds at $" + orderProduct.Price + " per pound)");
                         break;
 
+                    default:
+                        throw new ArgumentOutOfRangeException();
                 }
 
                 OrderSummary += "\r\n";
