@@ -15,14 +15,14 @@ namespace Refactoring
                         ProductName = "Pulled Pork",
                         Price = 6.99m,
                         Weight = 0.5m,
-                        PricingMethod = Data.Pricing.PerPound,
+                        PricingMethod = Pricing.PerPound,
                     },
                     new Product
                     {
                         ProductName = "Coke",
                         Price = 3m,
                         Quantity = 2,
-                        PricingMethod = Data.Pricing.PerItem
+                        PricingMethod = Pricing.PerItem
                     }
                 }
             );

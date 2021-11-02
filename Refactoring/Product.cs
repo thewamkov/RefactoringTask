@@ -15,7 +15,7 @@ namespace Refactoring
         public  decimal Price;
         public  decimal? Weight;
         public  int? Quantity;
-        public Data.Pricing PricingMethod;
+        public Pricing PricingMethod;
 
 
 
@@ -23,10 +23,10 @@ namespace Refactoring
         {
             switch (PricingMethod)
             {
-                case (Data.Pricing.PerItem):
+                case (Pricing.PerItem):
                     return (decimal)Quantity;
 
-                case (Data.Pricing.PerPound):
+                case (Pricing.PerPound):
                     return (decimal)Weight;
 
                 default:

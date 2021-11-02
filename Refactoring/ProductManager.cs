@@ -33,11 +33,11 @@ namespace Refactoring
 
                 switch (orderProduct.PricingMethod)
                 {
-                    case (Data.Pricing.PerItem):
+                    case (Pricing.PerItem):
                         OrderSummary += (" $" + productPrice + " (" + amount + " items at $" + orderProduct.Price + " each)");
                         break;
 
-                    case (Data.Pricing.PerPound):
+                    case (Pricing.PerPound):
                         OrderSummary += (" $" + productPrice + " (" + amount + " pounds at $" + orderProduct.Price + " per pound)");
                         break;
 

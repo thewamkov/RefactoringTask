@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace Refactoring
 {
-    class Data
-    {
+    
          public enum Pricing
         {
             PerItem,
             PerPound
         };
-    }
+    
 }
